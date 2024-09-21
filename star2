@@ -1,0 +1,37 @@
+Write a program which contains a function which accepts number n and prints n lines as per below:
+(Considering n = 4)
+
+*
+ *
+  *
+   *
+
+
+   
+import java.util.Scanner;
+
+public class star2 {
+
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number of lines for the diagonal star pattern: ");
+        int n = scanner.nextInt(); // Read user input
+        
+        printDiagonalPattern(n);
+        
+        scanner.close(); // Close the scanner
+    }
+
+    public static void printDiagonalPattern(int n) {
+        for (int i = 0; i < n; i++) {
+            // Print leading spaces
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            // Print the star
+            System.out.println("*");
+        }
+    }
+
+}
