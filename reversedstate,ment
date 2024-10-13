@@ -1,0 +1,41 @@
+Wap to reversed a words statement
+
+
+package com.code.reverse;
+
+import java.util.Scanner;
+
+public class revrsesstatement {
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        
+	        System.out.println("Enter a statement to reverse the words:");
+	        // Read the input string
+	        String input = scanner.nextLine();
+
+	        // Split the input string into words
+	        String[] words = input.split(" ");
+	        StringBuilder reversedSentence = new StringBuilder();
+	        
+	        // Loop through each word, reverse it, and append it to the result
+	        for (String word : words) {
+	            String reversedWord = reverseString(word);
+	            reversedSentence.append(reversedWord).append(" ");
+	        }
+
+	        // Output the results
+	        System.out.println("Original string: " + input);    
+	        System.out.println("Reversed words: " + reversedSentence.toString().trim());   
+	        
+	        scanner.close();
+	    }
+
+	    // Helper method to reverse a given string
+	    private static String reverseString(String str) {
+	        StringBuilder reversedStr = new StringBuilder();
+	        for (int i = str.length() - 1; i >= 0; i--) {
+	            reversedStr.append(str.charAt(i));
+	        }
+	        return reversedStr.toString();
+	    }
+}
