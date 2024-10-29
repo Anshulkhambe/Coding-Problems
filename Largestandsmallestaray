@@ -1,0 +1,31 @@
+Write a program to find largest and smallest number in an array
+
+
+import java.util.Arrays;
+
+public class findlargestandsmallestarray {
+	   public static void main(String args[]) {
+		   
+		   int numbers[]= {-1,2,3,-5,6,7,10};
+
+		   
+		   int largest=numbers[0];
+		   int smallest=numbers[0];
+
+		   for(int i=1;i<numbers.length;i++) {
+		  if(numbers[i]>largest) {  //comparing with 0 index  -1>-1  2>-1 3>-1  -5>-1  6>-1  7>-1  10>-1
+			  
+			 
+			largest=numbers[i];  //10 is largest
+		    }
+		  else if(numbers[i]<smallest) {   //  -1<-1  2<-1 3<-1  -5<-1  6<-1  7<-1  10<-1
+			  
+			  smallest=numbers[i];     // -5 is smallest
+		  }
+	   }
+		   System.out.println("given array"+Arrays.toString(numbers));
+		   System.out.println("Largest number is"+largest);
+		   System.out.println("Smallest number is"+smallest);
+
+}
+}
