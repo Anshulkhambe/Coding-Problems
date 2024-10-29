@@ -1,0 +1,24 @@
+Write a program for missing number in an  array
+
+public class missingnoarray {
+	   public static void main(String args[]) {
+   //It should be in sequence number
+    int a[]= {1,2,3,5,6,7,8,9,10};
+     int sum=0;
+     for(int i=0;i<a.length;i++) {
+	  sum=sum+a[i];   // addition of array 
+  }
+  System.out.println(sum);
+  
+  int sum1=0;
+  for(int j=1;j<=10;j++) {   //addition till condition satisfies
+	  sum1=sum1+j;   //0+1=1  0+2=2   3    4   5   =55
+	  
+  }
+
+	   System.out.println(sum1);
+
+	   System.out.println("Missing number is"+(sum1-sum));
+
+}
+}
