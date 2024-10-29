@@ -1,0 +1,25 @@
+Write a program for factorial of number without loop (Recursion)
+
+import java.util.Scanner;
+
+public class factorailwithoutloop {
+
+	   //using function by using if else condition (recursion method)
+	//recursive function : a function is calling itself
+	   public static int factorial(int num) {
+		   if(num==0 ||num==1)
+			   return 1;
+		   else 
+			   return num*factorial(num-1);  // 2*1=2    3*2=6   4*6=24    5*24=120
+	   }
+	   public static void main(String args[]) {
+          Scanner sc=new Scanner(System.in);
+          
+    		System.out.println("Enter the number");
+
+          int num=sc.nextInt();
+
+		System.out.println("Factorial of "+num+"="+factorial(num));
+
+   }
+}
