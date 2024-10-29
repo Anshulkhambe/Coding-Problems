@@ -6,14 +6,23 @@ public class reverseofnumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int no = 2347, reverse = 0;  
+		
+		//using algorithm
+		
+		int no = 12345, reverse = 0;  
 		while(no > 0)   
 		{  
 		int remainder = no % 10;  
-		reverse = reverse * 10 + remainder;  
-		no = no/10;  
+		reverse = reverse * 10 + remainder;  //54321
+		no = no/10;  //12345
 		}  
 		System.out.println("The reverse of the given number is: " + reverse);  
+	
+	
+	//using string buffer
+	
+	int num=12345;
+	System.out.println("The reverse of the given number is: "+new StringBuffer(String.valueOf(num)).reverse());  
+  //Stringbuffer is mutable so it has reverse function which can be reverse an integer
 	}
-
 }
