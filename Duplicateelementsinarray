@@ -1,0 +1,58 @@
+Write program to find duplicate elements in an array
+
+
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class dupicateelements {
+	   public static void main(String args[]) {
+		   
+		   
+		   String names[]= {"Java","C" ,"Python","Angular","React","Java"};
+		   
+		   //compare each element  ---worst solution
+		   for(int i=0;i<names.length;i++) {
+			   for(int j=i+1;j<names.length;j++) {
+				   if(names[i].equals(names[j])) {
+					   System.out.println("Duplicate elements is " +names[i]);
+				   }
+			   }
+		   }
+		   
+		   //using Hashset it is part of collect it stores unique value
+		   
+		   Set<String> store=new HashSet<String>();
+		   for(String name:names) {   //using foreach loop
+			   if(store.add(name)==false) {
+				   System.out.println("Duplicate elements is " +name);
+			   }
+		   }
+		   
+		   //using Hashmap
+		   
+		   Map<String, Integer> store2=new HashMap<String, Integer>();
+		   
+		   for(String name:names) {
+			   Integer count= store2.get(name);    //value is null
+			   if(count==null) {
+				   store2.put(name, 1);  //put method used to add in hashmap, value=1 how many time is duplicate elemt coming
+			   }
+			   else {
+				   store2.put(name, ++(count));
+			   }
+		   }
+		   
+		   //get the value from hashmap
+		  Set<Entry<String,Integer>> entrySet= store2.entrySet();  //key and value hashmap
+		  for(Entry<String,Integer> entry:entrySet) 
+		  {
+		  if(entry.getValue()>1) {
+			  System.out.println("duplicate element is "+entry.getKey());
+		  }
+		  }
+	   }
+}
